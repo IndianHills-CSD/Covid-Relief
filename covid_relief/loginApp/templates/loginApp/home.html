@@ -1,12 +1,22 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
+		<meta charset="utf-8">
 		<title>Covid Relief Homepage</title>
+
+		<!-- The next 3 links are for bootstrap -->
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+		<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<!-- Latest compiled JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> 
+		<!-- end of bootstrap stuff -->
 
 		<link rel="stylesheet" href="../../static/style.css" />
 	</head>
 	<body>
-		<h2>Covid Relief Home</h2>
+		<h1>Covid Relief Home</h1>
 
 		<p><b>Active cases: </b>{{Active}}</p>
 		<p><b>Recovered: </b>{{Recovered}}</p>
@@ -15,8 +25,8 @@
 		<a href="{% url 'login'%}">login</a>
 		<a href="{% url 'register'%}">register</a>
 
-		<div class="RPFDA">
-			<h3>Recomended Procedures For Daily Activities</h3>
+		<div class="daily">
+			<h3>Recomended Procedures for Daily Activities</h3>
 			<ul>
 				<li>In general, the more closely you interact with others and the longer that interaction, the higher the risk of COVID-19 spread.</li>
 				<li>If you decide to engage in public activities, continue to protect yourself by practicing everyday preventive actions.</li>
@@ -24,9 +34,22 @@
 			</ul>
 			<p>Best Practices would be to:</p>
 			<ul>
-				<li>Wash your hands often. This should be for at least 20 seconds. Wash your hand after interacting with people or touching things that a lot of people touch.</li>
+				<li>Wash your hands often. This should be for at least 20 seconds. Wash your hand after interacting with people or touching things that a lot of people touch. Also, when avaliable use sanitizer with at least 60% alcohol. (Note: this does not replace hand washing)</li>
 				<li>Social Distance when possible. The recomended distance is 6ft or further. Try to avoid situations that don't allow social distancing.</li>
 				<li>Wear a mask. <b>Masks should be worn over the nose</b> and mouth. Masks should be worn even when social distancing. A mask will protect others if you are infected and not showing symtoms. It will also give you some protection from the virus.</li>
+			</ul>
+		</div>
+		<div class="travel">
+			<h3>Recomended Procedures for Travel</h3>
+			<ul>
+				<li>Travel is not recomended if you or anyone you live with would be vulnerable to COVID-19.</li>
+				<li>Make sure to check travel restrictions before you go.</li>
+				<li>Follow the daily recomendations on your trip.</li>
+				<li>Consider your form of transport. Public transport or air travel made bring you into contact with a lot of people. Traveling by car or RV will still expose you at stops for gas or food.</li>
+				<li>It is better to bring what you can so you don't have to stop at a lot of places.</li>
+				<li>After you return you should be extra careful incase you have contracted COVID-19.</li>
+		</div>
+		<div class="gatherings">
 		</div>
 	</body>
 </html>
