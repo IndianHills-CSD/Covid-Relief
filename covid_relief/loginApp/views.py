@@ -10,8 +10,10 @@ def home(request):
 
 
 def login(request):
-    return HttpResponse('<h1>login</h1>')
+    #return HttpResponse('<h1>login</h1>')
+    return render(request, 'loginApp/login.html')
 
 def register(request):
-    return HttpResponse('<h1>register</h1>')
+    #return HttpResponse('<h1>register</h1>')
+    return render(request, 'loginApp/register.html')
 
