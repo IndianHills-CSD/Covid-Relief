@@ -1,7 +1,66 @@
 p {
-	color:red
-	background-color: gray;
+	font-size: 1.1em;
+	
+}
+li{
+	font-size: 1.1em;
 }
 h1{
-	color:blue;
+	color: #fff;
+	margin:0;
+	padding-top: 55px;
+	font-size: 6em;
+	text-shadow: 4px 4px black;
+}
+header{
+	background-color: #061d47;
+	 background-repeat: no-repeat;
+  	 height: 200px;
+  	 background-position: center;
+  	 background-size: 500px 280px;
+  	 position: relative;
+
+}
+body{
+	margin: 0;
+}
+.container-fluid{
+	
+}
+.content{
+	background-color: #D3D3D3;
+	border: 4px black solid;
+	
+	border-radius: 10px;
+	margin-bottom: 6px;
+	padding: 15px;
+}
+
+@media only screen and (max-width: 800px){
+	h1{
+		font-size:4em;
+	}
+	h3{
+		font-size: 1.2em;
+	}
+	li, p{
+		font-size: 1em;
+	}
+}
+@media(max-width: 476px){
+	h1{
+		padding-top: 40px;
+	}
+	ul{
+		padding-left: 20px;
+	}
+}
+@media(max-width: 320px){
+	h1{
+		font-size:2em;
+		padding-top: 60px;
+	}
+	h3{
+		font-size: 1em;
+	}
 }
