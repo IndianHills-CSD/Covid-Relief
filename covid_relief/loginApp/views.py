@@ -1,12 +1,15 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import Post
 # Create your views here.
  
  
 def home(request):
-    dummy = {'Active': 28, 'Recovered': 31, 'Uninfected': 62}
-    #return HttpResponse('<h1>hello</h1>')
-    return render(request, 'loginApp/home.html',dummy)
+    
+    context = {
+    	'userInfo': Post.objects.all()
+    }
+    return render(request, 'loginApp/home.html',context)
 
 
 def login(request):
