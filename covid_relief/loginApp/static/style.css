@@ -4,6 +4,11 @@ p {
 }
 li{
 	font-size: 1.1em;
+
+}
+pre{
+	font-size: 1.1em;
+	background-color: #D3D3D3;
 }
 h1{
 	color: #fff;
