@@ -7,7 +7,7 @@ from .models import Post
 def home(request):
     
     context = {
-    	'userInfo': Post.objects.all()
+    	'Posts': Post.objects.all()
     }
     return render(request, 'loginApp/home.html',context)
 

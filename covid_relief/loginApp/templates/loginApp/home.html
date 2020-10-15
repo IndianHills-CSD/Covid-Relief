@@ -24,39 +24,26 @@
 		</header>
 	<div class="container-fluid">
 
-		<p><b>Active cases: </b>{{Active}}</p>
-		<p><b>Recovered: </b>{{Recovered}}</p>
-		<p><b>Uninfected: </b>{{Uninfected}}</p>
+		<p><b>Active cases: </b>{{userInfo}}</p>
 
+		
+		
 		<a href="{% url 'login'%}">login</a>
 		<a href="{% url 'register'%}">register</a>
 
-		<div class="daily content">
-			<h3>Recomended Procedures for Daily Activities</h3>
-			<ul>
-				<li>In general, the more closely you interact with others and the longer that interaction, the higher the risk of COVID-19 spread.</li>
-				<li>If you decide to engage in public activities, continue to protect yourself by practicing everyday preventive actions.</li>
-				<li>Keep these items on hand when venturing out: a face mask, tissues, and a hand sanitizer with at least 60% alcohol, if possible.</li>
-			</ul>
-			<p>Best Practices would be to:</p>
-			<ul>
-				<li>Wash your hands often. This should be for at least 20 seconds. Wash your hand after interacting with people or touching things that a lot of people touch. Also, when avaliable use sanitizer with at least 60% alcohol. (Note: this does not replace hand washing)</li>
-				<li>Social Distance when possible. The recomended distance is 6ft or further. Try to avoid situations that don't allow social distancing.</li>
-				<li>Wear a mask. <b>Masks should be worn over the nose</b> and mouth. Masks should be worn even when social distancing. A mask will protect others if you are infected and not showing symtoms. It will also give you some protection from the virus.</li>
-			</ul>
-		</div>
-		<div class="travel content">
-			<h3>Recomended Procedures for Travel</h3>
-			<ul>
-				<li>Travel is not recomended if you or anyone you live with would be vulnerable to COVID-19.</li>
-				<li>Make sure to check travel restrictions before you go.</li>
-				<li>Follow the daily recomendations on your trip.</li>
-				<li>Consider your form of transport. Public transport or air travel made bring you into contact with a lot of people. Traveling by car or RV will still expose you at stops for gas or food.</li>
-				<li>It is better to bring what you can so you don't have to stop at a lot of places.</li>
-				<li>After you return you should be extra careful incase you have contracted COVID-19.</li>
-		</div>
-		<div class="gatherings content">
-		</div>
+		{% for post in Posts %}
+        <div class="content">
+          <div>
+            <div>
+              <a class="mr-2" href="#">{{ post.author }}</a>
+              <small class="text-muted">{{ post.date_posted }}</small>
+            </div>
+            <h3><a class="article-title" href="#">{{ post.title }}</a></h3>
+            <p class="article-content">{{ post.content }}</p>
+          </div>
+        </div>
+    	{% endfor %}
+		
 	</div>
 	</body>
 </html>
