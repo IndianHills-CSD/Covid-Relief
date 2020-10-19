@@ -1,13 +1,14 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Post
+from django.contrib.auth.forms import UserCreationForm
 # Create your views here.
  
  
 def home(request):
     
     context = {
-    	'Posts': Post.objects.all()
+    	'userInfo': Post.objects.all()
     }
     return render(request, 'loginApp/home.html',context)
 
@@ -18,5 +19,11 @@ def login(request):
 
 def register(request):
     #return HttpResponse('<h1>register</h1>')
-    return render(request, 'loginApp/register.html')
-
+    if request.method == 'POST':
+    	form = UserCreationForm(request.POST)
+    	if form.is_valid():
+    		username = form.cleaned_data.get('username')
+    		return redirect('home')
+    else:
+    	form = UserCreationForm()
+    return render(request, 'loginApp/register.html', {'form': form })
