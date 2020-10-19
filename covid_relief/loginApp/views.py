@@ -8,7 +8,7 @@ from django.contrib.auth.forms import UserCreationForm
 def home(request):
     
     context = {
-    	'userInfo': Post.objects.all()
+    	'Posts': Post.objects.all()
     }
     return render(request, 'loginApp/home.html',context)
 
