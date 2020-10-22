@@ -14,4 +14,7 @@ class Post(models.Model):
 class UserInfo(models.Model):
 	address = models.TextField(max_length=100)
 	status = models.CharField(max_length=10)
-	userKey = models.ForeignKey(User, on_delete =models.CASCADE)
+	userKey = models.TextField()
+
+	def __str__(self):
+		return self.userKey
