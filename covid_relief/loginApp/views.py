@@ -4,14 +4,18 @@ from .models import Post
 from .models import UserInfo
 from .forms import UserRegisterForm
 # Create your views here.
- 
+
  
 def home(request):
-    
-    context = {
-    	'Posts': Post.objects.all()
-    }
-    return render(request, 'loginApp/home.html',context)
+	all = UserInfo.objects.all()
+	i = UserInfo.objects.filter(status='infected')
+	iLen = len(i)
+	u = UserInfo.objects.filter(status='uninfected')
+	uLen = len(u)
+	r = UserInfo.objects.filter(status='recovered')
+	rLen = len(r)
+	context = {'Posts': Post.objects.all(),'infected': iLen, 'uninfected': uLen, 'recovered': rLen}
+	return render(request, 'loginApp/home.html',context)
 
 
 def login(request):
