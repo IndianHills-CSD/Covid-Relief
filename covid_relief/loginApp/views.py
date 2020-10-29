@@ -34,7 +34,7 @@ def register(request):
     		username = form.cleaned_data.get('username')
     		ui = UserInfo(address=request.POST.get('address'),status=request.POST.get('status'),userKey=username)
     		ui.save()
-    		return redirect('home')
+    		return redirect('login')
     	else:
     		if request.POST.get('address') == '':
     			errmsg = "must enter an address"
