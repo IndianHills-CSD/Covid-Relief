@@ -28,8 +28,12 @@
 		<p><b>Uninfected: </b>{{uninfected}}</p>
 		<p><b>Recovered: </b>{{recovered}}</p>
 		
-		<a href="{% url 'login'%}">login</a>
-		<a href="{% url 'register'%}">register</a>
+		{% if user.is_authenticated %}
+		<a class="btn btn-info" href="{% url 'logout'%}">logout</a>
+		{% else %}
+		<a class="btn btn-info" href="{% url 'login'%}">login</a>
+		<a class="btn btn-info" href="{% url 'register'%}">register</a>
+		{% end-if %}
 
 		{% for post in Posts %}
         <div class="content">
