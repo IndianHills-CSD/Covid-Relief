@@ -1,7 +1,9 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
+from django.views.generic import ListView
 from .models import Post
 from .models import UserInfo
+from django.views.generic import CreateView
 from .forms import UserRegisterForm
 # Create your views here.
 
@@ -16,6 +18,14 @@ def home(request):
 	rLen = len(r)
 	context = {'Posts': Post.objects.all(),'infected': iLen, 'uninfected': uLen, 'recovered': rLen}
 	return render(request, 'loginApp/home.html',context)
+
+class PostCreateView(CreateView):
+    model = Post
+    fields = ['title','content']
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
 
 
 def login(request):

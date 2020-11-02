@@ -33,7 +33,7 @@
 		{% else %}
 		<a class="btn btn-info" href="{% url 'login'%}">login</a>
 		<a class="btn btn-info" href="{% url 'register'%}">register</a>
-		{% end-if %}
+		{% endif %}
 
 		{% for post in Posts %}
         <div class="content">
