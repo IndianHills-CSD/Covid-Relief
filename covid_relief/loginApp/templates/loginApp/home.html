@@ -31,8 +31,10 @@
 		{% if user.is_authenticated %}
 		<a class="btn btn-primary" href="{% url 'logout'%}">logout</a>
 		{% else %}
+    
 		<a class="btn btn-primary" href="{% url 'login'%}">login</a>
 		<a class="btn btn-primary" href="{% url 'register'%}">register</a>
+
 		{% endif %}
 
 		{% for post in Posts %}
